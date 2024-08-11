@@ -5,10 +5,10 @@
 </header>
 <section>
 
-    @if (!GameLists) {
+    @if (!GameLists && !GameAssets) {
         
     }@else {
-       <app-game-view [gameList]="gameList"/>
+       <app-game-view [gameList]="gameList" [gameAssets]="GameAssets"/>
     }
 
 

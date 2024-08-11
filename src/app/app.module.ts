@@ -8,6 +8,8 @@ import { GameViewComponent } from './componets/game-view/game-view.component';
 
 import { provideHttpClient } from '@angular/common/http';
 import { TeamViewComponent } from './componets/team-view/team-view.component';
+import { TeamGridComponent } from './componets/team-grid/team-grid.component';
+import { ParticipantCardComponent } from './componets/participant-card/participant-card.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { TeamViewComponent } from './componets/team-view/team-view.component';
     AppComponent,
     HomeComponent,
     GameViewComponent,
-    TeamViewComponent
+    TeamViewComponent,
+    TeamGridComponent,
+    ParticipantCardComponent
   ],
   imports: [
     BrowserModule,

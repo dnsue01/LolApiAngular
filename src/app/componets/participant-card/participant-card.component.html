@@ -1,0 +1,22 @@
+<div class="card">
+<p>{{participant.championId}}</p>
+  <p>{{ participant.riotId }}</p>
+
+  
+    <div class="playerType"
+      [ngClass]="{
+        human: participant.bot == false,
+        bot: participant.bot == true
+      }"
+    >
+      {{ participant.bot }}
+    </div>
+
+
+
+
+
+
+
+  </div>
+

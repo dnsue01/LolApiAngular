@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { GameList, Participant} from '../../interfaces/game-list.interface';
+import { Gameassets } from '../../interfaces/game-assets.interface';
 
 @Component({
   selector: 'app-game-view',
@@ -8,7 +9,7 @@ import { GameList, Participant} from '../../interfaces/game-list.interface';
 })
 export class GameViewComponent {
 @Input() gameList!:GameList;
-
+@Input() gameAssets!:Gameassets;
 
 
 ngOnInit(){
