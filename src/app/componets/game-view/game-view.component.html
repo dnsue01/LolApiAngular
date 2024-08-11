@@ -1,11 +1,5 @@
 <section>
-  <h1>blue team</h1>
-
-  <app-team-grid [team]="blueTeam" [gameAssets]="gameAssets"></app-team-grid>
-
-  <hr />
-  <p>{{ gameList.gameMode }}</p>
-  <hr />
-  <h1>red team</h1>
-  <app-team-grid [team]="redTeam" [gameAssets]="gameAssets"></app-team-grid>
+  <app-team-grid [team]="blueTeam" [gameAssets]="gameAssets" [Spells]="Spells"></app-team-grid>
+  <br>
+  <app-team-grid [team]="redTeam" [gameAssets]="gameAssets" [Spells]="Spells"></app-team-grid>
 </section>

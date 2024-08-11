@@ -1,9 +1,30 @@
 .layout {
-    height: 200px;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-    margin-inline: 2%;
-    background-color: aqua;
+  height: 300px; /* Ajusta automáticamente la altura basada en el contenido */
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  margin-inline: 2%;
+  background-color: aqua;
+}
+
+/* Para pantallas medianas (tabletas y dispositivos similares) */
+@media (max-width: 768px) {
+  .layout {
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
   }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .layout {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+  }
+}
+
+/* Para pantallas muy pequeñas o móviles en orientación vertical */
+@media (max-width: 320px) {
+  .layout {
+      grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+  }
+}

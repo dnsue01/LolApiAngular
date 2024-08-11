@@ -1,15 +1,9 @@
 import { Component } from '@angular/core';
 import { LolApiService } from '../../services/lol-api.service';
-import {
-  GameLists,
-  GameList,
-  BannedChampion,
-  Observers,
-  Participant,
-} from '../../interfaces/game-list.interface';
-import { Observable } from 'rxjs';
+import { GameLists, GameList } from '../../interfaces/game-list.interface';
 import { Gameassets } from '../../interfaces/game-assets.interface';
 import { GameAssetsService } from '../../services/game-assets.service';
+import { Spells } from '../../interfaces/spells.interfaces';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +13,8 @@ import { GameAssetsService } from '../../services/game-assets.service';
 export class HomeComponent {
   GameLists!: GameLists;
   gameList!: GameList;
-  GameAssets!:Gameassets;
+  GameAssets!: Gameassets;
+  Spells!: Spells;
 
   constructor(
     private lolApiService: LolApiService,
@@ -29,6 +24,7 @@ export class HomeComponent {
   ngOnInit() {
     this.getFeaturedGames();
     this.getAssets();
+    this.getSpells();
   }
 
   async getFeaturedGames(): Promise<any> {
@@ -41,13 +37,15 @@ export class HomeComponent {
         game.gameMode.toLocaleLowerCase() == 'calssic'
       );
     })[0];
-
-    
   }
 
   getAssets() {
     this.gameassets.getGameAssets().subscribe((champions) => {
-      this.GameAssets=champions;
+      this.GameAssets = champions;
     });
+  }
+
+  async getSpells() {
+    this.Spells = await this.gameassets.getSpells();
   }
 }
