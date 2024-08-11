@@ -1,4 +1,5 @@
 export interface Gameassets {
+    [x: string]: any;
     type:    Type;
     format:  string;
     version: Version;

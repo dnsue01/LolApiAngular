@@ -41,6 +41,8 @@ export class HomeComponent {
         game.gameMode.toLocaleLowerCase() == 'calssic'
       );
     })[0];
+
+    
   }
 
   getAssets() {

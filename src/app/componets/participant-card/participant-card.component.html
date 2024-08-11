@@ -1,6 +1,17 @@
 <div class="card">
-<p>{{participant.championId}}</p>
-  <p>{{ participant.riotId }}</p>
+  <div class="loadingImage">
+    @if(championName){
+      <img src="{{ImageUrl}}" alt="{{championName}}">
+    }@else {
+      <h1>no image</h1>
+    }
+    
+  </div>
+ 
+  <div class="playerName">
+    <p>{{ participant.riotId }}</p>
+  </div>
+
 
   
     <div class="playerType"

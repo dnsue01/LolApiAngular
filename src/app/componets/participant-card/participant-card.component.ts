@@ -11,11 +11,26 @@ export class ParticipantCardComponent {
 
   @Input() participant!:Participant;
   @Input() gameAssets!:Gameassets;
+  championName:string="";
 
+  ImageUrl="";
+  Url="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
 
+  ngOnInit(){
 
-
-  ngOnInti(){
+    Object.values(this.gameAssets.data).map(value => {
+  
+    if(value.key == this.participant.championId.toString()){
+     this.championName = value.id;
+     this.ImageUrl =this.Url+this.championName+"_0.jpg"
+    }
     
+       
+  });
+  
+  
+  
+  
+  
   }
 }

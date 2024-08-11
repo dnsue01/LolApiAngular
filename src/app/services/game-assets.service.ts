@@ -9,10 +9,20 @@ import { Gameassets } from '../interfaces/game-assets.interface';
 export class GameAssetsService {
   constructor(private http: HttpClient) {}
 
-  url: string =
+  urlAssets: string =
     'https://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json';
 
+
+  urlSpells:string="https://ddragon.leagueoflegends.com/cdn/14.15.1/data/en_US/summoner.json";
+
   getGameAssets(): Observable<Gameassets> {
-    return this.http.get<Gameassets>(this.url);
+    return this.http.get<Gameassets>(this.urlAssets);
   }
+
+  getSpells():Promise<any>{
+    return lastValueFrom(this.http.get(this.urlSpells))
+  }
+  
+
+
 }
