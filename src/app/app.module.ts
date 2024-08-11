@@ -4,15 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { CardComponent } from './componets/card/card.component';
+import { GameViewComponent } from './componets/game-view/game-view.component';
 
 import { provideHttpClient } from '@angular/common/http';
+import { TeamViewComponent } from './componets/team-view/team-view.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CardComponent
+    GameViewComponent,
+    TeamViewComponent
   ],
   imports: [
     BrowserModule,

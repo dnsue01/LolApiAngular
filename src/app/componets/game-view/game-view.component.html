@@ -1,0 +1,17 @@
+<section>
+    <h1>blue team</h1>
+    <ol>
+
+ 
+  @for (participant of blueTeam; track participant.riotId) {
+    <li> <p>{{participant.riotId}}</p></li>
+  }
+</ol>
+<hr>
+<p>{{gameList.gameMode}}</p>
+<hr>
+  <h1>red team</h1>
+  @for (participant of redTeam; track participant.riotId) {
+    <p>{{participant.riotId}}</p>
+  }
+</section>
