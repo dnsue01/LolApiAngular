@@ -1,0 +1,28 @@
+
+
+.teamGrid h1 {
+    color: #fff; /* White color for contrast */
+    text-align: center; /* Center the text */
+    margin: 10px 10px; /* Center the element horizontally and add vertical space */
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Letter spacing */
+    background-color: #444; /* Background color */
+    padding: 10px 20px; /* Padding for space around the text */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow */
+    display: inline-block; /* Allow the h1 to shrink to fit content */
+    border: 2px solid #777; /* Subtle border */
+    background: linear-gradient(90deg, #3a3a3a, #555, #3a3a3a); /* Gradient background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Optional: Add a gradient background */
+.teamGrid h1 {
+    background: linear-gradient(90deg, #3a3a3a, #555, #3a3a3a); /* Gradient background */
+}

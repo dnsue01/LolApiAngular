@@ -8,11 +8,11 @@ import { Spells } from '../../interfaces/spells.interfaces';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  styleUrls: ['./home.component.css'], // Fixed typo: styleUrl -> styleUrls
 })
 export class HomeComponent {
   GameLists!: GameLists;
-  gameList!: GameList;
+  gameList!: GameList; // Keeps the original type
   GameAssets!: Gameassets;
   Spells!: Spells;
 
@@ -27,16 +27,25 @@ export class HomeComponent {
     this.getSpells();
   }
 
-  async getFeaturedGames(): Promise<any> {
-    let response = await this.lolApiService.getFeaturedGames();
+  async getFeaturedGames(): Promise<void> {
+    while (!this.gameList) {
+      const response = await this.lolApiService.getFeaturedGames();
 
-    this.GameLists = response;
-    this.gameList = this.GameLists.gameList.filter((game) => {
-      return (
-        game.gameMode.toLocaleLowerCase() == 'aram' ||
-        game.gameMode.toLocaleLowerCase() == 'calssic'
-      );
-    })[0];
+      this.GameLists = response;
+      this.gameList = this.GameLists.gameList.find((game) => {
+        return (
+          game.gameMode.toLocaleLowerCase() === 'aram' ||
+          game.gameMode.toLocaleLowerCase() === 'classic'
+        );
+      })!; // Non-null assertion
+
+      if (!this.gameList) {
+        console.log("No ARAM or Classic game found, retrying...");
+        await this.delay(2000); // Wait for 2 seconds before retrying (you can adjust the delay as needed)
+      }
+    }
+
+    console.log("Found a game:", this.gameList);
   }
 
   getAssets() {
@@ -47,5 +56,10 @@ export class HomeComponent {
 
   async getSpells() {
     this.Spells = await this.gameassets.getSpells();
+  }
+
+  // Helper method to introduce a delay
+  delay(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 }

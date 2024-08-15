@@ -1,7 +1,72 @@
 .background {
   height: 100vh;
-  background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_nPtUzheVRG-crlt0TUsRqQWhJ8OUSiWvtwsNOBiy2CU3NPzxSKeFoK9br-bltxPzC_VX1Iehy5SBHX7QoDYmjPHoLE9ERVOErjSdu6BXng6zppQNtRRl-R7yIN4lY90T7gUsWoJWcb1p/s1600/SRBackground.png");
+  background-image: url("https://64.media.tumblr.com/4a24e41efc4b2a751425994c2181bea0/00c2785f8d0ac563-7f/s1280x1920/ed65519b117f47d84f8656bf21f375964625d3d3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Ensures the background image stays fixed when scrolling */
+}
+
+/* Large desktops and above */
+@media (max-width: 1600px) {
+  .background {
+    background-position: center center;
+  }
+}
+
+/* Desktops and laptops */
+@media (max-width: 1200px) {
+  .background {
+    background-position: top center; /* Adjust the position for medium screens */
+  }
+}
+
+/* Tablets (portrait mode) */
+@media (max-width: 992px) {
+  .background {
+    background-position: center center;
+    background-size: cover;
+    padding: 5px; /* Minimal padding for very small screens */
+    height: 100%;  /* Ensure it covers the screen */
+  }
+}
+
+/* Tablets and larger smartphones */
+@media (max-width: 768px) {
+  .background {
+    background-position: center center;
+    background-size: cover;
+    padding: 5px; /* Minimal padding for very small screens */
+    height: 100%;
+  }
+}
+
+/* Small smartphones (landscape mode) */
+@media (max-width: 576px) {
+  .background {
+    background-position: center center;
+    background-size: cover;
+    padding: 5px; /* Minimal padding for very small screens */
+    height: 100%; 
+  }
+}
+
+/* Small smartphones (portrait mode) */
+@media (max-width: 480px) {
+  .background {
+    background-position: center center;
+    background-size: cover; /* Ensure it covers the screen */
+    height: 100%; /* Allow the background to adjust dynamically */
+    padding: 10px; /* Add a bit more padding for very small screens */
+  }
+}
+
+/* Extra small smartphones */
+@media (max-width: 360px) {
+  .background {
+    background-position: center center;
+    background-size: cover;
+    padding: 5px; /* Minimal padding for very small screens */
+    height: 100%; /* Ensure full height */
+  }
 }

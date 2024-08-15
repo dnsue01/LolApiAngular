@@ -1,30 +1,59 @@
 .layout {
-  height: 300px; /* Ajusta automáticamente la altura basada en el contenido */
+  padding-top: 2%;
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2px;
-  margin-inline: 2%;
-  background-color: aqua;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusts automatically based on card count */
+  gap: 10px;
+  justify-items: center;
 }
 
-/* Para pantallas medianas (tabletas y dispositivos similares) */
+/* Large desktops and above */
+@media (max-width: 1600px) {
+  .layout {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Slightly larger columns */
+  }
+}
+
+/* Desktops and laptops */
+@media (max-width: 1200px) {
+  .layout {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust column width for desktops */
+  }
+}
+
+/* Tablets (portrait mode) */
+@media (max-width: 992px) {
+  .layout {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+  }
+}
+
+/* Tablets and larger smartphones */
 @media (max-width: 768px) {
   .layout {
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
   }
 }
 
-/* Para pantallas pequeñas (móviles) */
+/* Small smartphones (landscape mode) */
+@media (max-width: 576px) {
+  .layout {
+    grid-template-columns: repeat(2, 1fr); /* Maintain 2 columns for small landscape screens */
+    gap: 8px; /* Reduce gap slightly */
+  }
+}
+
+/* Small smartphones (portrait mode) */
 @media (max-width: 480px) {
   .layout {
-      grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+    grid-template-columns: 1fr; /* Single column for small screens */
+    gap: 6px; /* Further reduce gap */
   }
 }
 
-/* Para pantallas muy pequeñas o móviles en orientación vertical */
-@media (max-width: 320px) {
+/* Extra small smartphones */
+@media (max-width: 360px) {
   .layout {
-      grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    grid-template-columns: 1fr; /* Maintain single column layout */
+    gap: 4px; /* Minimal gap for smallest screens */
   }
 }
